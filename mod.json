@@ -14,6 +14,7 @@
 		"Flafy"
 	],
 	"description": "A simple song manager for Geometry Dash",
+	"repository": "https://github.com/Fleeym/jukebox",
 	"links": {
 		"community": "https://discord.gg/maSgd4zpEF",
 		"source": "https://github.com/Fleeym/jukebox"
