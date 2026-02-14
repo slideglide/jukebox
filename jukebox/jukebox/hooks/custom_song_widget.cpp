@@ -214,13 +214,13 @@ class $modify(JBSongWidget, CustomSongWidget) {
 
         int downloaded = 0;
         int total = 0;
-        for (const bool v : m_songs | std::views::values) {
+        for (auto const& [id, v] : m_songs) {
             total++;
             if (v) {
                 downloaded++;
             }
         }
-        for (const bool v : m_sfx | std::views::values) {
+        for (auto const& [id, v] : m_sfx) {
             total++;
             if (v) {
                 downloaded++;
