@@ -151,7 +151,7 @@ Result<> IndexManager::loadIndex(matjson::Value&& jsonObj) {
     /*                false,*/
     /*                fmt::format("Failed to register index song: {}",
      * r.error()))*/
-    /*                .post();*/
+    /*                .send();*/
     /*        }*/
     /*    }*/
     /*    index->m_songs.m_youtube.push_back(std::move(song));*/

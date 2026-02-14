@@ -68,7 +68,7 @@ web::WebFuture getMetadata(const std::string& id) {
              {"isAudioOnly", "true"}}))
         .header("Accept", "application/json")
         .header("Content-Type", "application/json")
-        .post("https://api.cobalt.tools/api/json");
+        .post("https://api.cobalt.tools/api/json", Mod::get());
 }
 
 Future<Result<ByteVector>> onMetadata(web::WebResponse result) {
