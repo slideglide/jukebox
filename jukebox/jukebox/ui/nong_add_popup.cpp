@@ -446,13 +446,13 @@ void NongAddPopup::setSongType(SongType type, bool memorizePrevious) {
     if (memorizePrevious) {
         switch (m_songType) {
             case SongType::LOCAL:
-                m_memoizedLocalInput = m_specialInput->getString();
+                m_memoizedLocalInput = std::string(m_specialInput->getString());
                 break;
             case SongType::HOSTED:
-                m_memoizedHostedInput = m_specialInput->getString();
+                m_memoizedHostedInput = std::string(m_specialInput->getString());
                 break;
             case SongType::YOUTUBE:
-                m_memoizedYoutubeInput = m_specialInput->getString();
+                m_memoizedYoutubeInput = std::string(m_specialInput->getString());
                 break;
         }
     }
@@ -604,7 +604,7 @@ void NongAddPopup::addSong(CCObject* target) {
 Result<> NongAddPopup::addLocalSong(const std::string& songName, const std::string& artistName,
                                     const std::optional<std::string> levelName, int offset) {
     if (!m_localPath.has_value()) {
-        std::filesystem::path path = m_specialInput->getString();
+        std::filesystem::path path = std::string(m_specialInput->getString());
         if (std::filesystem::exists(path)) {
             m_localPath = path;
         }
@@ -708,7 +708,7 @@ geode::Result<> NongAddPopup::addYTSong(const std::string& songName, const std::
     if (artistName.empty()) {
         return Err("Artist name is empty");
     }
-    std::string ytLink = m_specialInput->getString();
+    std::string ytLink = std::string(m_specialInput->getString());
     if (strlen(ytLink.c_str()) == 0) {
         return Err("No URL specified");
     }
@@ -773,7 +773,7 @@ geode::Result<> NongAddPopup::addHostedSong(const std::string& songName, const s
         return Err("Artist name is empty");
     }
 
-    const std::string hostedLink = m_specialInput->getString();
+    const std::string hostedLink = std::string(m_specialInput->getString());
     if (strlen(hostedLink.c_str()) == 0) {
         return Err("No URL specified");
     }
