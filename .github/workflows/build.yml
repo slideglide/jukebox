@@ -40,8 +40,6 @@ jobs:
           export-pdb: true
           combine: true
           target: ${{ matrix.config.target }}
-          sdk: nightly
-          cli: nightly
           ccache-variant: ccache
           build-config: ${{ matrix.config.build-type || 'Release' }}
 
